@@ -1,64 +1,41 @@
+import { MdOutlineWbSunny, MdOutlineMenu, MdClose } from "react-icons/md";
 import { useState } from "react";
-import { FiMenu } from "react-icons/fi";
-import { IoCloseCircleOutline } from "react-icons/io5";
 
-const Menu = ({ children }) => {
+export const Menu = ({ children }) => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const handleMenuClicked = () => {
+  const routes = ["About", "Work", "Testimonials", "Contact"];
+
+  const handleMenuClick = () => {
     setIsMenuClicked((previousState) => !previousState);
   };
+
   return (
-    <div>
-      <button onClick={handleMenuClicked}>
-        {isMenuClicked ? (
-          <IoCloseCircleOutline />
-        ) : (
-          <FiMenu className="flex md:hidden" />
-        )}
-      </button>
-      <div>
-        {isMenuClicked && (
-          <div className="md:hidden">
-            <div className="w-full h-fit flex flex-col">
-              <div className="w-[320px] h-176 flex flex-col gap-4 p-4 border-solid border border-slate-500">
-                <About>
-                  <button className="text-base text-gray-600 font-medium">
-                    About
-                  </button>
-                </About>
-                <Work>
-                  <button className="text-base text-gray-600 font-medium">
-                    Work
-                  </button>
-                </Work>
-                <Testimonials>
-                  <button className="text-base text-gray-600 font-medium">
-                    Testimonials
-                  </button>
-                </Testimonials>
-                <Contact>
-                  <button className="text-base text-gray-600 font-medium">
-                    Contact
-                  </button>
-                </Contact>
-              </div>
-              <div className="w-full h-fit flex flex-col items-center cursor-pointer">
-                <div className="w-full h-fit flex justify-between">
-                  Switch Theme
-                  <FiSun />
-                </div>
-                <Download>
-                  <button className="w-32 h-9 border-solid border rounded-xl bg-gray-900 text-gray-50 text-base">
-                    Download CV
-                  </button>
-                </Download>
-              </div>
-            </div>
+    <div className="mx-auto max-w-screen-xl">
+      <div className="px-20 py-4 flex justify-between">
+        <h2>{"<SS />"}</h2>
+        <div className="hidden md:flex-center divide-x-2">
+          <div className="flex-center gap-6">
+            {routes.map((route, index) => (
+              <p key={index}>{route}</p>
+            ))}
           </div>
-        )}
+          <div className="flex-center">
+            <MdOutlineWbSunny />
+            <button className="rounded-xl bg-black text-white px-4 py-1.5">
+              Download CV
+            </button>
+          </div>
+        </div>
+        <button onClick={handleMenuClick}>
+          {isMenuClicked ? (
+            <MdClose />
+          ) : (
+            <MdOutlineMenu size={24} className="block md:hidden" />
+          )}
+        </button>
       </div>
+      {isMenuClicked && <div className="bg-white w-full h-full">menu</div>}
       {children}
     </div>
   );
 };
-export default Menu;

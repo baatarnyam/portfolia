@@ -1,13 +1,15 @@
+// "use client";
 import About from "@/components/About";
 import Work from "@/components/work";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/contact";
 import Download from "@/components/Download";
 import HeaderFooter from "@/components/HeaderFooter";
+import { Menu } from "@/components/Menu";
 
 import { useState } from "react";
 import { FiSun } from "react-icons/fi";
-import { LuMoonStar } from "react-icons/lu";
+// import { LuMoonStar } from "react-icons/lu";
 import { FiMenu } from "react-icons/fi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
@@ -26,6 +28,8 @@ export default function home() {
           <div className="w-[375px] md:w-[1280px] h-[36px] flex items-center justify-between border-solid border px-8">
             <div>{"<SS/>"}</div>
             <div className="md:w-[554px] md:h-full md:flex">
+              {/* <Menu /> */}
+
               <div className="hidden md:flex md:gap-6 md:items-center">
                 <About>
                   <button className="text-base text-gray-600 font-medium dark:text-white">
@@ -113,7 +117,7 @@ export default function home() {
             </div>
           )}
         </div>
-        <HeaderFooter></HeaderFooter>
+        <HeaderFooter />
       </div>
     </div>
   );
