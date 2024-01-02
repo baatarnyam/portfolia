@@ -1,9 +1,8 @@
-import { Children } from "react";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
-const Menu = (props) => {
+const Menu = ({ children }) => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const handleMenuClicked = () => {
     setIsMenuClicked((previousState) => !previousState);
@@ -58,7 +57,7 @@ const Menu = (props) => {
           </div>
         )}
       </div>
-      {Children}
+      {children}
     </div>
   );
 };
