@@ -1,4 +1,4 @@
-// "use client";
+
 import About from "@/components/About";
 import Work from "@/components/work";
 import Testimonials from "@/components/Testimonials";
@@ -23,12 +23,12 @@ export default function home() {
   };
   return (
     <div className="w-full h-full flex flex-col items-center p-10">
-      <div className="w-[375px] md:w-[1440px] md:h-full">
-        <div className="w-[375px] md:w-[1440px] md:h-[68px] border-solid border md:flex md:items-center md:justify-center flex flex-col items-start px-2.5 gap-5">
-          <div className="w-[375px] md:w-[1280px] h-[36px] flex items-center justify-between border-solid border px-8">
+      <div className="md:w-[1440px] md:h-full w-[375px] h-[68px]">
+        <div className="md:w-[1440px] md:h-[68px] w-[375px] md:flex md:items-center flex flex-col items-center px-2.5 gap-5 border-solid border">
+          <div className="w-[375px] h-[36px] md:w-[1280px] flex items-center justify-between border-solid border px-8">
+          {/* <Menu /> */}
             <div>{"<SS/>"}</div>
             <div className="md:w-[554px] md:h-full md:flex">
-              {/* <Menu /> */}
 
               <div className="hidden md:flex md:gap-6 md:items-center">
                 <About>

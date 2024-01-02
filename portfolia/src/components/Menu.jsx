@@ -15,8 +15,8 @@ export const Menu = ({ children }) => {
         <h2>{"<SS />"}</h2>
         <div className="hidden md:flex-center divide-x-2">
           <div className="flex-center gap-6">
-            {routes.map((route, index) => (
-              <p key={index}>{route}</p>
+            {routes.map((routes, index) => (
+              <p key={index}>{routes}</p>
             ))}
           </div>
           <div className="flex-center">
