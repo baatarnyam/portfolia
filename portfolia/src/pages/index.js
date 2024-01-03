@@ -1,4 +1,3 @@
-
 import About from "@/components/About";
 import Work from "@/components/work";
 import Testimonials from "@/components/Testimonials";
@@ -6,10 +5,11 @@ import Contact from "@/components/contact";
 import Download from "@/components/Download";
 import HeaderFooter from "@/components/HeaderFooter";
 import { Menu } from "@/components/Menu";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 import { FiSun } from "react-icons/fi";
-// import { LuMoonStar } from "react-icons/lu";
+import { LuMoonStar } from "react-icons/lu";
 import { FiMenu } from "react-icons/fi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
@@ -21,21 +21,19 @@ export default function home() {
   const handleMenuClicked = () => {
     setIsMenuClicked((previousState) => !previousState);
   };
+
   return (
     <div className="w-full h-full flex flex-col items-center p-10">
       <div className="md:w-[1440px] md:h-full w-[375px] h-[68px]">
         <div className="md:w-[1440px] md:h-[68px] w-[375px] md:flex md:items-center flex flex-col items-center px-2.5 gap-5 border-solid border">
           <div className="w-[375px] h-[36px] md:w-[1280px] flex items-center justify-between border-solid border px-8">
-          {/* <Menu /> */}
             <div>{"<SS/>"}</div>
             <div className="md:w-[554px] md:h-full md:flex">
-
               <div className="hidden md:flex md:gap-6 md:items-center">
-                <About>
-                  <button className="text-base text-gray-600 font-medium dark:text-white">
-                    About
-                  </button>
-                </About>
+                <button className="text-base text-gray-600 font-medium dark:text-white">
+                  About
+                </button>
+
                 <Work>
                   <button className="text-base text-gray-600 font-medium dark:text-white">
                     Work
@@ -52,11 +50,18 @@ export default function home() {
                   </button>
                 </Contact>
                 <div className="w-[188px] h-full flex gap-4 items-center cursor-pointer">
-                  <FiSun
+                  <div
                     onClick={() =>
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
-                  />
+                  >
+                    {theme === "dark" ? (
+                      <FiSun className="active:scale-110" />
+                    ) : (
+                      <LuMoonStar className="active:scale-110" />
+                    )}
+                  </div>
+
                   <Download>
                     <button className="w-32 h-9 border-solid border rounded-xl bg-gray-900 text-gray-50 text-base dark:bg-white dark:text-black">
                       Download CV
@@ -74,14 +79,18 @@ export default function home() {
             </div>
           </div>
           {isMenuClicked && (
-            <div className="md:hidden">
-              <div className="w-full h-fit flex flex-col">
-                <div className="w-[320px] h-176 flex flex-col gap-4 p-4 border-solid border border-slate-500">
-                  <About>
-                    <button className="text-base text-gray-600 font-medium dark:text-white ">
-                      About
-                    </button>
-                  </About>
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: "0" }}
+              exit={{ x: "150%", duration: 1 }}
+              className="w-[375px] h-[400px] fixed top-20 "
+            >
+              <div className="w-[320px] h-[500px] flex flex-col">
+                <div className="w-[320px] h-176 flex flex-col gap-4 p-4 border-solid border border-gray-100 border-x-0">
+                  <button className="text-base text-gray-600 font-medium dark:text-white ">
+                    About
+                  </button>
+
                   <Work>
                     <button className="text-base text-gray-600 font-medium dark:text-white ">
                       Work
@@ -98,8 +107,8 @@ export default function home() {
                     </button>
                   </Contact>
                 </div>
-                <div className="w-full h-fit flex flex-col items-center cursor-pointer">
-                  <div className="w-full h-fit flex justify-between">
+                <div className="w-[320px] h-[120px] flex flex-col items-center cursor-pointer p-[16px] gap-[16px]">
+                  <div className="w-full h-fit flex justify-between items-center">
                     Switch Theme
                     <FiSun
                       onClick={() =>
@@ -108,16 +117,17 @@ export default function home() {
                     />
                   </div>
                   <Download>
-                    <button className="w-32 h-9 border-solid border rounded-xl bg-gray-900 text-gray-50 text-base  dark:bg-white dark:text-black">
+                    <button className="md:w-32 md:h-9 md:border-solid md:border rounded-xl bg-gray-900 text-gray-50 text-base w-[288px] h-[36px] border border-solid  dark:bg-white dark:text-black">
                       Download CV
                     </button>
                   </Download>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
-        <HeaderFooter />
+        <HeaderFooter></HeaderFooter>
+        <About></About>
       </div>
     </div>
   );

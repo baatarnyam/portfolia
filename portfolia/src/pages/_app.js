@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
-import { ThemeProvider as NextThemes } from "next-themes";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 export default function App({ Component, pageProps }) {
   return (
-    <NextThemes attribute="class" defaulTheme="system" enableSystem>
+    <NextThemesProvider defaultTheme="system" enableSystem attribute="class">
       <Component {...pageProps} />
-    </NextThemes>
+    </NextThemesProvider>
   );
 }
