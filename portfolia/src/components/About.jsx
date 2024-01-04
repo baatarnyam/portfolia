@@ -3,24 +3,24 @@ import Image from "next/image";
 
 const About = ({ children }) => {
   return (
-    <div className="md:w-[1440px] md:h-[962px] md:py-[96px] md:px-[80px] bg-gray-50 border border-solid dark:bg-gray-900 w-[375px] h-[1690px] py-[64px] px-[16px]">
-      <div className="md:w-[1280px] md:h-[770px] md:px-[32px] md:gap-[48px] border border-solid flex flex-col w-[343px] h-[1562px] gap-[24px]">
+    <div className="md:w-[1440px] md:h-[962px] md:py-[96px] md:px-[80px] bg-gray-50 dark:bg-gray-900 w-[375px] h-[1690px] py-[64px] px-[16px]">
+      <div className="md:w-[1280px] md:h-[770px] md:px-[32px] md:gap-[48px] flex flex-col w-[343px] h-[1562px] gap-[24px]">
         <div className="md:w-full h-28px flex items-center justify-center w-[343px]">
           <div className="w-[105px] h-[28px] rounded-[12px] text-[14px] bg-gray-200 text-gray-600 flex items-center justify-center dark:bg-gray-500 dark:text-gray-50">
             About me
           </div>
         </div>
-        <div className="md:w-full md:h-[694px] md:flex gap-[48px] border border-solid w-[343px] h-[1510px]">
-          <div className="md:w-[584px] md:h-full border border-solid relative w-[343px] h-[380px]">
+        <div className="md:w-full md:h-[694px] md:flex gap-[48px] w-[343px] h-[1510px]">
+          <div className="md:w-[584px] md:h-full relative w-[343px] h-[380px]">
             <div className="md:w-[400px] md:h-[480px] bg-gray-200 absolute z-0 md:top-[40px] w-[320px] h-[340px] border-[8px] border-solid top-[20px] left-[11.5px] dark:bg-gray-500"></div>
             <Image
               src={"/about.png"}
-              width={400}
-              height={480}
-              className="absolute z-10 md:left-[40px] left-[31.5px]"
+              width={280}
+              height={360}
+              className="absolute z-10 md:left-[40px] left-[31.5px] md:w-[400px] md:h-[480px]"
             />
           </div>
-          <div className="md:w-[584px] md:h-full flex flex-col gap-[16px] border border-solid">
+          <div className="md:w-[584px] md:h-full flex flex-col gap-[16px]">
             <div className="md:w-full md:h-[36px] md:text-[30px] text-gray-900 font-[600] text-[24px] dark:text-gray-100">
               Curious about me? Here you have it:
             </div>
@@ -56,7 +56,7 @@ const About = ({ children }) => {
             </div>
             <div className="md:w-full md:h-[58px] flex gap-[10px]">
               <div className="md:w-[287px] md:h-[24px] text-base text-gray-600 font-normal dark:text-gray-100">
-                <div className="flex items-center gap-2">
+                <div className="md:flex md:items-center gap-2 flex">
                   <GoDotFill />
                   <div>B.E. in Computer Engineering</div>
                 </div>

@@ -7,11 +7,11 @@ import Image from "next/image";
 
 const HeaderFooter = (props) => {
   return (
-    <div className="md:w-[1440px] md:h-[552px] md:py-[96px] md:px-[80px] md:items-center md:justify-center md:flex w-[375px] h-[880px] py-[64px] px-16px flex flex-col items-center border border-solid">
-      <div className="md:w-[1280px] md:h-[360px] md:py-0 md:px-[32px] md:gap-[48px] md:flex w-[343px] h-[752px] gap-[48px] flex flex-col justify-end relative border border-solid">
-        <div className="md:w-[768px] md:h-[360px] md:gap-[48px] w-[343px] h-[404px] flex flex-col items-center gap-[48px] border border-solid">
-          <div className="md:w-[768px] md:h-[152px] w-[343px] h-[216px] gap-[8px] flex flex-col border border-solid">
-            <p className="md:w-[768px] md:h-[72px] md:text-[60px] md:text-gray-900 md:flex md:items-center w-[260px] h-[40px] text-[36px] text-gray-600 flex items-center dark:text-white border border-solid">
+    <div className="md:w-[1440px] md:h-[552px] md:py-[96px] md:px-[80px] md:items-center md:justify-center md:flex w-[375px] h-[880px] py-[64px] px-16px flex flex-col items-center ">
+      <div className="md:w-[1280px] md:h-[360px] md:py-0 md:px-[32px] md:gap-[48px] md:flex w-[343px] h-[752px] gap-[48px] flex flex-col justify-end relative ">
+        <div className="md:w-[768px] md:h-[360px] md:gap-[48px] w-[343px] h-[404px] flex flex-col items-center gap-[48px]">
+          <div className="md:w-[768px] md:h-[152px] w-[343px] h-[216px] gap-[8px] flex flex-col">
+            <p className="md:w-[768px] md:h-[72px] md:text-[60px] md:text-gray-900 md:flex md:items-center w-[260px] h-[40px] text-[36px] text-gray-600 flex items-center dark:text-white">
               Hi, I’m Sagar👋
             </p>
             <p className="md:w-[768px] md:h-[72px] md:text-base md:font-normal md:text-gray-600 w-[343px] h-[168px] text-[16px] dark:text-gray-300">
@@ -22,7 +22,7 @@ const HeaderFooter = (props) => {
               over 7 years, I still love it as if it was something new.
             </p>
           </div>
-          <div className="md:w-[768px] md:h-[56px] w-[343px] h-[56px] flex flex-col gap-2 border border-solid">
+          <div className="md:w-[768px] md:h-[56px] w-[343px] h-[56px] flex flex-col gap-2">
             <div className="flex items-center gap-2">
               <SlLocationPin />
               <p className="text-base text-gray-600 font-normal dark:text-gray-300">
@@ -42,12 +42,12 @@ const HeaderFooter = (props) => {
             <FiFigma />
           </div>
         </div>
-        <div className="md:w-[400px] md:h-[360px] md:right-0 w-[343px] h-[300px] absolute border border-solid top-0">
+        <div className="md:w-[400px] md:h-[360px] md:right-0 w-[343px] h-[300px] absolute top-0">
           <Image
             src="/Pic.png"
-            width={280}
-            height={320}
-            className="absolute z-10"
+            width={240}
+            height={280}
+            className="absolute z-10 md:w-[280px] md:h-[320] left-[52px]"
           />
           <div className="md:w-[280px] md:h-[320px] md:bg-gray-200 border-[8px] border-solid absolute z-0 md:bottom-0 md:right-[80px] w-[280px] h-[280px] top-[20px] left-[31.5px] dark:bg-gray-600 dark:border-none"></div>
         </div>
