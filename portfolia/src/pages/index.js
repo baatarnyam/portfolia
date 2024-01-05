@@ -3,6 +3,8 @@ import Work from "@/components/work";
 import HeaderFooter from "@/components/HeaderFooter";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experiense";
+import Footer from "@/components/Footer";
+import FooterBottom from "@/components/FooterBottom";
 
 import { Menu } from "@/components/Menu";
 import { motion } from "framer-motion";
@@ -121,6 +123,8 @@ export default function home() {
         <Skills></Skills>
         <Experience></Experience>
         <Work></Work>
+        <Footer></Footer>
+        <FooterBottom></FooterBottom>
       </div>
     </div>
   );
